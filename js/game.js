@@ -32,18 +32,18 @@ let movingRight = false; // Track if moving right
 let movingLeft = false; // Track if moving left
 
 function preload(){
-  monkeyImg = loadImage('/asset/monkey.png'); //upload img
-  monkImg=loadImage('/asset/monk.png');
-  mountainImg=loadImage('/asset/mountain.png');
-  scroll= loadImage('/asset/scroll.PNG');
-  demon=loadImage('/asset/demon.png');
-  sword=loadImage('/asset/sword.png');
-  goldStick=loadImage('/asset/goldStick.png');
-  game=loadImage('/asset/IMG_5166-1.PNG');
-  collectItem = loadImage('/asset/bowl.png');
-  backgroundInitial = loadImage('/asset/Screen Shot 2024-11-15 at 3.52.51 PM.png');
-  backgroundDodge=loadImage('/asset/IMG_5167 (1).PNG');
-  backgroundFinal=loadImage('/asset/Screen Shot 2024-11-15 at 3.48.38 PM.png');
+  monkeyImg = loadImage('../asset/monkey.png'); //upload img
+  monkImg=loadImage('../asset/monk.png');
+  mountainImg=loadImage('../asset/mountain.png');
+  scroll= loadImage('../asset/scroll.PNG');
+  demon=loadImage('../asset/demon.png');
+  sword=loadImage('../asset/sword.png');
+  goldStick=loadImage('../asset/goldStick.png');
+  game=loadImage('../asset/IMG_5166-1.PNG');
+  collectItem = loadImage('../asset/bowl.png');
+  backgroundInitial = loadImage('../asset/Screen Shot 2024-11-15 at 3.52.51 PM.png');
+  backgroundDodge=loadImage('../asset/IMG_5167 (1).PNG');
+  backgroundFinal=loadImage('../asset/Screen Shot 2024-11-15 at 3.48.38 PM.png');
 }
 function setup() {
   
