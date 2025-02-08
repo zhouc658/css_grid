@@ -65,6 +65,8 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     grid-row: 2; /* only take up the first row */
     grid-column: 3/ 4;
     place-items: center; 
+    text-align: center; /* Added for ensuring text alignment */
+
 }
 .item-3 h1{
     font-size: 80px;
@@ -72,6 +74,10 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     margin-top: 60px;
     margin-bottom: 0;
     color: #ffffff;
+}
+.item-3 a {
+    text-decoration: none;
+    
 }
 
 .item-4{
