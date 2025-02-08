@@ -56,6 +56,9 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     margin-bottom: 0;
     color: #ffffff;
 }
+.item-2 a {
+    text-decoration: none;
+}
 
 
 .item-3{
