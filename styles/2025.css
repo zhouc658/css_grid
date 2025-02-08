@@ -65,8 +65,7 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     grid-row: 2; /* only take up the first row */
     grid-column: 3/ 4;
     place-items: center; 
-    text-align: center; /* Added for ensuring text alignment */
-
+    text-align: center; 
 }
 .item-3 h1{
     font-size: 80px;
@@ -77,7 +76,6 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
 }
 .item-3 a {
     text-decoration: none;
-    
 }
 
 .item-4{
@@ -92,6 +90,9 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     margin-bottom: 0;
     color: #ffffff;
 }
+.item-4 a {
+    text-decoration: none;
+}
 
 .item-5{
     grid-row: 3; /* only take up the first row */
@@ -105,11 +106,15 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     margin-bottom: 0;
     color: #ffffff;
 }
+.item-5 a {
+    text-decoration: none;
+}
 
 .item-6{
     grid-row: 3; /* only take up the first row */
     grid-column: 3/ 4;
     place-items: center; 
+    text-align: center; 
 }
 .item-6 h1{
     font-size: 80px;
@@ -118,17 +123,25 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     margin-bottom: 0;
     color: #ffffff;
 }
+.item-6 a {
+    text-decoration: none;
+}
 
 .item-7{
     grid-row: 3; /* only take up the first row */
     grid-column: 4/ 5;
-    place-items: center; }
+    place-items: center; 
+    text-align: center; 
+}
 .item-7 h1{
     font-size: 80px;
     font-weight: 100;
     margin-top: 30px;
     margin-bottom: 0;
     color: #ffffff;
+}
+.item-7 a {
+    text-decoration: none;
 }
 
 .item-8{
