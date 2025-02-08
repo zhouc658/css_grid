@@ -82,6 +82,7 @@ grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr ;
     grid-row: 2; /* only take up the first row */
     grid-column: 4/ 5;
     place-items: center; 
+    text-align: center; 
 }
 .item-4 h1{
     font-size: 80px;
