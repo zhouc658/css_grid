@@ -89,7 +89,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 .item-5 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #87adfe, #ff77cd);
+    background: linear-gradient(45deg, hsl(273, 64%, 67%), #2069d1);      border-radius: 8px;  /* Make corners more rounded */
     border-radius: 8px;  /* Make corners more rounded */
     padding: 15px 30px;  /* Increase padding for a larger button */
     box-sizing: border-box;
@@ -101,7 +101,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 
 .item-5 .btn:hover {
-    background: linear-gradient(45deg, #ff77cd, #87adfe); /* Reverse the gradient */
+    background: linear-gradient(45deg,#2069d1, hsl(273, 64%, 67%));      border-radius: 8px;  /* Make corners more rounded */
     box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25); /* Increase shadow on hover */
     transform: translateY(-3px); /* Slight lift effect */
 }
@@ -112,8 +112,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 .item-6 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #87adfe, #ff77cd);
-    border-radius: 8px;  /* Make corners more rounded */
+    background: linear-gradient(45deg, hsl(273, 100%, 85%), #2069d1);      border-radius: 8px;  /* Make corners more rounded */
     padding: 15px 30px;  /* Increase padding for a larger button */
     box-sizing: border-box;
     text-decoration: none;
@@ -124,8 +123,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 
 .item-6 .btn:hover {
-    background: linear-gradient(45deg, #ff77cd, #87adfe); /* Reverse the gradient */
-    box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25); /* Increase shadow on hover */
+    background: linear-gradient(45deg, #2069d1, hsl(273, 100%, 85%));      border-radius: 8px;  /* Make corners more rounded */
     transform: translateY(-3px); /* Slight lift effect */
 }
 .item-7{
@@ -134,7 +132,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 .item-7 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #87adfe, #ff77cd);
+    background: linear-gradient(45deg, hsl(209, 100%, 90%), #2069d1);      border-radius: 8px;  /* Make corners more rounded */
     border-radius: 8px;  /* Make corners more rounded */
     padding: 15px 30px;  /* Increase padding for a larger button */
     box-sizing: border-box;
@@ -146,7 +144,7 @@ grid-template-rows: 20vh 60vh 20vh;
 }
 
 .item-7 .btn:hover {
-    background: linear-gradient(45deg, #ff77cd, #87adfe); /* Reverse the gradient */
+    background: linear-gradient(45deg, #2069d1, hsl(200, 100%, 85%));      box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25); /* Increase shadow on hover */
     box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25); /* Increase shadow on hover */
     transform: translateY(-3px); /* Slight lift effect */
 }
