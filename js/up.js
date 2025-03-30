@@ -12,6 +12,7 @@ function preload() {
   scene1=loadImage('../asset/scene1.png');
   scene2=loadImage('../asset/scene2.png');
   scene3=loadImage('../asset/scene3.png');
+  
 }
 
 function setup() {
@@ -70,7 +71,6 @@ if (point62X >= width / 2 && previousX < width / 2 && sceneState === 1) {
   
 }
 function mousePressed() {
-  // Toggle sceneState between 0 and 1
   sceneState = (sceneState + 1) % 3;
 }
 
@@ -149,14 +149,7 @@ if (positions) {
       vertex(positions[leftEyeIndex][0], positions[leftEyeIndex][1]);
     }
     endShape(CLOSE);
-    // fill(255,255,255);
-    // let LEyeBall= [24, 27, 26];
-    // beginShape(); 
-    // for (let i = 0; i < LEyeBall.length; i++) {
-    //   let LEyeBallIndex = LEyeBall[i];
-    //   vertex(positions[LEyeBallIndex][0], positions[LEyeBallIndex][1]);
-    // }
-    // endShape(CLOSE);
+
     fill(255,255,255);
     let whiteChin=[5, 44, 55, 54, 53,52, 51, 50, 9, 8,7,6];
     beginShape(); 
@@ -261,7 +254,7 @@ function mask2(){
     }
     endShape(CLOSE);
     
-    stroke(255,0,0); // Set stroke color to black (or whatever you prefer)
+    stroke(255,0,0); 
     strokeWeight(3);
     let rightEye= [30,68,29,67,28,70,31,69];
     beginShape(); 
