@@ -4,6 +4,16 @@ let positions;
 let mouth;
 let sceneState = 0;
 let previousX = 0;
+let scene1;
+let scene2;
+let scene3;
+
+function preload() {
+  scene1=loadImage('../asset/scene1.png');
+  scene2=loadImage('../asset/scene2.png');
+  scene3=loadImage('../asset/scene3.png');
+}
+
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("sketch");    
@@ -23,23 +33,18 @@ function draw() {
   positions = tracker.getCurrentPosition();
   
   if (positions && positions.length > 62) {
-    // Get the X-coordinate of point 62
-   // Get the X and Y coordinates of point 62
     let point62X = positions[33][0];
     let point62Y = positions[33][1];
 
-    // Check if point 62 passes a certain X threshold (e.g., halfway across the screen)
     if (point62X < width / 2 && previousX >= width / 2) {
       // Point 62 crosses to the left, change to scene 1 (mask1)
       sceneState = 1;
     }
-    // Check if point 62 crosses to the right (changes back to scene 0)
 if (point62X >= width / 2 && previousX < width / 2 && sceneState === 1) {
   sceneState = 0; // Change back to scene 0
 }
-    // Check if point 62 passes a certain Y threshold (e.g., halfway down the screen)
     if ((point62Y < height / 2 && previousY >= height / 2)) {
-      // Point 62 crosses up, change to scene 2 (mask2)
+      // Point 62 crosses up, change to scene 3 (mask3)
       sceneState = 2;
     }
 
@@ -50,12 +55,15 @@ if (point62X >= width / 2 && previousX < width / 2 && sceneState === 1) {
 
   switch (sceneState) {
     case 0:
+      image(scene1, 0, 0, width, height);
       mask1();
     break;
     case 1:
+      image(scene2, 0, 0, width, height);
       mask2();
     break;
     case 2:
+      image(scene3, 0, 0, width, height);
       mask3();
     break;
   }
