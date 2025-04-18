@@ -1,0 +1,73 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(180deg, #ffe8f8 0%, #e0f7ff 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+  
+  .container{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 15vh 20vh 45vh 20vh;
+    }
+    .item{
+        padding: 0.5cm;
+         /* background-color: #fb7185;
+        border: 10px solid #e11d48; */
+    }
+    .item-1{
+        grid-row: 1; /* only take up the first row */
+        
+        display: grid;         /* Make this item a grid container */
+        justify-items: center; /* Horizontally center content inside the grid item */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+    }
+    .item-2{
+        grid-row: 2; /* only take up the first row */
+        
+        display: grid;         /* Make this item a grid container */
+        justify-items: center; /* Horizontally center content inside the grid item */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+    }
+    .item-3{
+        grid-row: 3; /* only take up the first row */
+
+        display: grid;         /* Make this item a grid container */
+        justify-items: center; /* Horizontally center content inside the grid item */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+    }
+    .item-4{
+        grid-row: 4; /* only take up the first row */
+    }
+    .item-4 .btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #87adfe, #ff77cd);
+        border-radius: 8px;  /* Make corners more rounded */
+        padding: 15px 30px;  /* Increase padding for a larger button */
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #fff;
+        box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.15);
+    }
+    .item-4 .btn:hover {
+        background: linear-gradient(45deg, #ff77cd, #87adfe); /* Reverse the gradient */
+        box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25); /* Increase shadow on hover */
+        transform: translateY(-3px); /* Slight lift effect */
+    }
+    .text{
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    
