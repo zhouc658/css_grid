@@ -1,3 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Kind of Beverage Are You?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>What Kind of Beverage Are You?</h1>
+        </div>
+        <div class="middle">
+            <form class="quiz-form" id="quizForm">
+                <div class="question">
+                    <p>1. What's your ideal way to spend a weekend?</p>
+                    <label><input type="radio" name="q1" value="soda"> Partying with friends until sunrise 🍾</label><br>
+                    <label><input type="radio" name="q1" value="tea"> Curling up with a book and a cozy blanket 📖</label><br>
+                    <label><input type="radio" name="q1" value="margarita"> Going on an unexpected adventure 🚀</label>
+                </div>
+
+                <div class="question">
+                    <p>2. Pick a word that best describes your vibe:</p>
+                    <label><input type="radio" name="q2" value="soda"> Bubbly ✨</label><br>
+                    <label><input type="radio" name="q2" value="tea"> Smooth 😎</label><br>
+                    <label><input type="radio" name="q2" value="margarita"> Zesty 🔥</label>
+                </div>
+
+                <div class="question">
+                    <p>3. What's your biggest strength?</p>
+                    <label><input type="radio" name="q3" value="soda"> I lift everyone’s mood like magic 🎉</label><br>
+                    <label><input type="radio" name="q3" value="tea"> I’m calm, collected, and always cool under pressure ❄️</label><br>
+                    <label><input type="radio" name="q3" value="margarita"> I keep things spicy and unpredictable 🌶️</label>
+                </div>
+
+                <input type="submit" id = "submit" value="Submit">
+                <div id="result" class="result"></div>
+            </form>
+        </div>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
