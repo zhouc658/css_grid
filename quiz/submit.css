@@ -1,0 +1,18 @@
+#submit {
+    background-image: url('../asset/quiz/basket.png'); /* Path to your image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px; /* Set width to match the icon */
+    height: 50px; /* Set height to match the icon */
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remove default padding */
+    transition: transform 0.2s ease;
+    color: transparent;
+    text-shadow: none;  }
+  
+  #submit:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  

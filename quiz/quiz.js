@@ -17,7 +17,7 @@ submit.addEventListener('click', ()=>{ //adding an event listener
 
 
    //setting up the questions we look for in the HTML
-   const questionNames= ["q2", "q3", "q4","q5","q6","q7","q8"]; //setting us up when iterate for our for loops, matches what the names are in out html
+   const questionNames= ["q1","q2", "q3", "q4","q5","q6","q7","q8"]; //setting us up when iterate for our for loops, matches what the names are in out html
    //const question1= document.querySelector(`input[name="q1"]`)
 
 
@@ -43,13 +43,19 @@ submit.addEventListener('click', ()=>{ //adding an event listener
        }
    }
 
+   // 🔹 Get the price selection from q1
+   const priceSelected=document.querySelector(`input[name="q8"]:checked`)
+   if (!priceSelected) {
+       resultDiv.innerHTML = "Please select a price option!";
+       return;
+   }
+   const priceValue = priceSelected.value; // 'cheap', 'mid', or 'expensive'
 
    //setting up result options
    let resultText = "";
    let results= ["You are cute",
                   "You are cool",
                   "You are elegant"];
-
 
    //checking which count was highest or if there was a tie
    //changong resultText based on the answer
@@ -60,12 +66,32 @@ submit.addEventListener('click', ()=>{ //adding an event listener
        resultText= results[1];
        window.location.href='cool.html';
    }else if(cuteCount==coolCount && cuteCount==elegantCount){
-       resultText= "You are a tie!"
-   } else {
+        window.location.href='cool.html';
+} else {
        resultText= results[2];
        window.location.href='elegant.html';
    }
    //adds the resultText to the results placeholder HTML, so it displays on the actual page vs the console
    resultDiv.innerHTML= resultText;
-})
 
+   if (results[0] && priceValue==='cheap'){
+    window.location.href='cuteCheap.html';
+   }else if(results[0]&& priceValue==='mid'){
+    window.location.href='cuteMid.html';
+   }else if(results[0]&& priceValue==='expensive'){
+    window.location.href='cuteExp.html';
+   }else if(results[1]&& priceValue==='cheap'){
+    window.location.href='coolCheap.html';
+   }else if(results[1]&& priceValue==='mid'){
+    window.location.href='coolMid.html';
+   }else if(results[1]&& priceValue==='expensive'){
+    window.location.href='coolExp.html';
+   }else if(results[2]&& priceValue==='cheap'){
+    window.location.href='elegantCheap.html';
+   }else if(results[2]&& priceValue==='mid'){
+    window.location.href='elegantMid.html';
+   }else if(results[2]&& priceValue==='expensive'){
+    window.location.href='elegantExp.html';
+   }
+
+})
