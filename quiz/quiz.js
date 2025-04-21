@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (ans === 'cool') cool++;
           if (ans === 'elegant') elegant++;
         });
-  
+  //test
         let resultType = "";
         if (cute > cool && cute > elegant) resultType = "cute";
         else if (cool > cute && cool > elegant) resultType = "cool";
