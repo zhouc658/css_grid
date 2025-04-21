@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: linear-gradient(180deg, #ffe8f8 0%, #e0f7ff 100%);
+    background-image: url('../asset/quiz/wall.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,13 +79,22 @@ body {
     justify-items: center;
     align-items: center;
 }
+.item-1 .answer-text{
+    font-size: 18px;
 
+}
+
+  
 .cool {
     grid-row:2;
     grid-column: 2 / 3; /* Next column */
     display: grid;
     justify-items: center;
     align-items: center;
+}
+.cool .answer-text{
+    font-size: 18px;
+
 }
 
 .elegant {
@@ -95,7 +104,10 @@ body {
     justify-items: center;
     align-items: center;
 }
+.elegant .answer-text{
+    font-size: 18px;
 
+}
 /* Styling for the clickable answer images */
 label {
     display: block;
@@ -105,15 +117,15 @@ label {
 }
 
 .answer-image {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     border: 3px solid transparent;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: border-color 0.3s ease;
 }
 
 input[type="radio"]:checked + .answer-image {
-    border-color: #4CAF50;
+    border-color: #d5609a;
 }
 
 .answer-text {

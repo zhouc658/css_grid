@@ -3,13 +3,11 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    /* background: linear-gradient(180deg, #ffe8f8 0%, #e0f7ff 100%); */
     background-image: url('../asset/quiz/wall.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    
 }
 
 .container {
@@ -18,13 +16,13 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-rows: 20vh 60vh 20vh;
-    grid-template-columns: 18vw 1fr 1fr 1fr 20vw; /* Defines 3 columns in the center */
+    grid-template-columns: 20vw 1fr 1fr 1fr 20vw; /* Defines 3 columns in the center */
     justify-items: center; /* This centers the content inside the container */
     align-items: center;
 }
 
 .item {
-    /* padding: 0.5cm; */
+    padding: 0.5cm;
 }
 
 .title {
@@ -39,7 +37,7 @@ body {
     padding-left: -100px;
 }
 
-#submit {
+#next {
     background-image: url('../asset/quiz/basket.png');
     background-size: contain;
     background-color: transparent;
@@ -55,7 +53,7 @@ body {
     text-shadow: none;
 }
 
-#submit:hover {
+#next:hover {
     transform: scale(1.1);
 }
 
@@ -80,13 +78,15 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-
 }
 .item-1 .answer-text{
     font-size: 18px;
 
 }
-
+.item-1 .answer-image {
+    background-color: #f0b6ed; /* light pink, for example */
+  }
+  
 .cool {
     grid-row:2;
     grid-column: 2 / 3; /* Next column */
@@ -106,7 +106,6 @@ body {
     justify-items: center;
     align-items: center;
 }
-
 .elegant .answer-text{
     font-size: 18px;
 
@@ -123,16 +122,20 @@ label {
     width: 250px;
     height: 200px;
     border: 3px solid transparent;
-    border-radius: 15px; /* Or whatever value looks good to you */
+    border-radius: 15px;
     transition: border-color 0.3s ease;
 }
-
 
 input[type="radio"]:checked + .answer-image {
     border-color: #d5609a;
 }
 
-
+.answer-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
 
 input[type="radio"] {
     display: none;
@@ -143,8 +146,4 @@ input[type="radio"] {
     grid-column: 3;
     padding-right: 50px;
     padding-bottom: 400px;
-}
-.shelf{
-    grid-row: 3;
-    grid-column: 2;
 }

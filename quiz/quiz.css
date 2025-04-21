@@ -4,9 +4,9 @@ body {
     padding: 0;
     color: #333;
     background-image: url('../asset/quiz/shop.png');
-  background-size: cover;          /* Scale image to cover the screen */
-  background-position: 80% center;     /* Center the image */
-  background-repeat: no-repeat;    /* Don’t repeat the image */
+    background-size: cover;          /* Scale image to cover the screen */
+    background-position: 80% center;     /* Center the image */
+    background-repeat: no-repeat;    /* Don’t repeat the image */
     text-align: center;
   }
   

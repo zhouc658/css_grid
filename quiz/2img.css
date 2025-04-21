@@ -1,0 +1,108 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ca63a1;
+    background-image: url('../asset/quiz/receipt.png');
+    background-size: 700px 900px;          /* Scale image to cover the screen */
+    background-position: center;     /* Center the image */
+    background-repeat: no-repeat;    /* Don’t repeat the image */
+    text-align: center;
+    background-color: #f5e8ff;
+  }
+  .container{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 30vh 8vh 20vh 20vh 15vh;
+    grid-template-columns: 30vw 1fr 1fr 30vw;
+    }
+    .item{
+        padding: 0.5cm;
+         /* background-color: #fb7185;
+        border: 10px solid #e11d48; */
+    }
+
+    .title {
+        grid-row: 1; /* only take up the first row */
+        grid-column: 2/4;
+        display: grid;         /* Make this item a grid container */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+        padding-top: 240px;
+    }
+    .item-1{
+        grid-row: 3; /* only take up the first row */
+        grid-column: 2;
+        display: grid;         /* Make this item a grid container */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+        padding-bottom: 100px;
+    }
+    .image1 {
+        grid-row: 3;
+        grid-column: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 90px;
+
+        /* padding-right: 100px ; */
+      }
+    .image1 img{
+        width: 240px;    /* Sets the width */
+        height: 150px;   /* Sets the height */
+        border-radius: 10px; /* Optional: round corners */
+    }
+
+    .item2{
+        grid-row: 4; /* only take up the first row */
+        grid-column: 2;
+        display: grid;         /* Make this item a grid container */
+        align-items: center;   /* Vertically center content inside the grid item */
+        text-align: center; 
+        padding-bottom: 150px;
+    }
+    .image2 {
+        grid-row: 4;
+        grid-column: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding-right: 100px ; */
+        padding-bottom: 100px;
+
+      }
+    .image2 img{
+        width: 240px;    /* Sets the width */
+        height: 150px;   /* Sets the height */
+        border-radius: 10px; /* Optional: round corners */
+    }
+
+    .item-3{
+        grid-row: 4; /* only take up the first row */
+        grid-column: 4;
+        /* padding-right: 50px; */
+        padding-top: 150px;
+    }
+    .btn {
+        grid-row: 5;              /* Choose the right row */
+        grid-column: 4;       /* Center it across columns */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+      
+      .btn img {
+        width: 160px;             /* Or whatever size you like */
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      
+      .btn img:hover {
+        transform: scale(1.05);   /* Cute hover zoom */
+      }
+      
