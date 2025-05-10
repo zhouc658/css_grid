@@ -1,5 +1,6 @@
 let api_url; // variable for the API URL
 let allCategories = []; // Stores all categories fetched from the Kitsu API.
+let currentPage = 1; // Track the current page of results
 
 // get categories from the Kitsu API
 async function getCategories() {
@@ -33,7 +34,7 @@ async function getCategories() {
         }
 
         // the category on category dropdown list will be based on the categories fetched from the API
-        populateCategoryDropdown(allCategories);
+        CategoryDropdown(allCategories);
 
         // adding an event listener for the input in the categorySearch , and create the function
         categorySearch.addEventListener('input', (event)=> {
@@ -44,7 +45,7 @@ async function getCategories() {
             });
 
             // Update the dropdown with the filtered categories and auto-select the first match
-            populateCategoryDropdown(filteredCategories);
+            CategoryDropdown(filteredCategories);
             autoSelectCategory(filteredCategories); // Automatically select the first match in the filtered list
         });
 
@@ -53,21 +54,21 @@ async function getCategories() {
     }
 }
 
-// Function to populate the category dropdown with categories
-function populateCategoryDropdown(categories) {
+function CategoryDropdown(categories) {
     const categorySelect = document.getElementById("categorySelect");
     // Reset the dropdown to its default option
     categorySelect.innerHTML = `<option value="">-- Choose a category to search --</option>`;
 
-    // Loop through the categories and add each to the dropdown
-    categories.forEach(category => {
-        const slug = category.attributes.slug; // Get the category's slug (unique identifier)
-        const title = category.attributes.title; // Get the category's title (used for display)
+    for (let i = 0; i < categories.length; i++) {
+        const category = categories[i]; // Get the current category in the loop
+        const slug = category.attributes.slug; // Get the category's slug (unique identifier for Kitsu api)
+        const title = category.attributes.title; // Get the category's title
+    
         const option = document.createElement("option"); // Create a new option element
-        option.value = slug; // Set the option value to the category's slug
+        option.value = slug; // Set the option value to the category's slug (API)
         option.textContent = title; // Set the display text to the category's title
-        categorySelect.appendChild(option); // Append the option to the dropdown
-    });
+        categorySelect.appendChild(option); // adding it to the lst
+    } 
 }
 
 // Function to automatically select the first matching category in the filtered list
@@ -80,36 +81,29 @@ function autoSelectCategory(filteredCategories) {
     }
 }
 
-// Call getCategories() when the page loads to fetch and display categories
 getCategories(); // Initiates the fetching of categories
 
 // Event listener for the search button to trigger the anime search
 let btn = document.getElementById("submit");
 
 btn.addEventListener("click", () => {
-    const selectedCategory = document.getElementById("categorySelect").value; // Get the selected category from the dropdown
-    const animeSearchText = document.getElementById("animeSearch").value; // Get the user-inputted anime title
+    const selectedCategory = document.getElementById("categorySelect").value; // Get the selected category from the dropdown/categroy
+    const animeSearchText = document.getElementById("animeSearch").value; // Get the user-inputted animeSearch
 
-    // Construct the base API URL for fetching anime based on user input
+    //API URL for gettting anime based on user input
     api_url = "https://kitsu.io/api/edge/anime?";
 
-    // If a category is selected, append it to the API URL
-    if (selectedCategory) {
-        api_url += `filter[categories]=${encodeURIComponent(selectedCategory)}&`; // Add category filter to URL
+    if (selectedCategory) { //if user has chosen a category then it will filter and request API for anime results for that category
+        api_url += `filter[categories]=${selectedCategory}&`; 
     }
 
-    // If the user has typed an anime title, add it to the API URL
+    //same idea
     if (animeSearchText) {
-        api_url += `filter[text]=${encodeURIComponent(animeSearchText)}&`; // Add title filter to URL
+        api_url += `filter[text]=${animeSearchText}&`; 
     }
 
-    // Request specific fields (synopsis, titles, posterImage) from the anime data
+    // Request synopsis, titles, Image
     api_url += "&fields[anime]=synopsis,titles,posterImage";
-
-    // Clean up the trailing "&" if it exists
-    api_url = api_url.endsWith("&") ? api_url.slice(0, -1) : api_url;
-
-    console.log("Search URL:", api_url); // Debugging: Log the constructed URL
 
     // Call getAnime() to fetch anime results using the constructed URL
     getAnime();
@@ -117,19 +111,22 @@ btn.addEventListener("click", () => {
 
 // Function to fetch and display anime based on the constructed API URL
 async function getAnime() {
-    const resultsDiv = document.getElementById("results"); // Get reference to the results container
-    resultsDiv.innerHTML = ""; // Clear any previous results
+    const resultsDiv = document.getElementById("results"); 
+    const loadMoreButton = document.getElementById("load-more");
 
     try {
-        const response = await fetch(api_url, {
+        // Update the API URL to include pagination based on currentPage
+        const pageUrl = `${api_url}&page[limit]=10&page[offset]=${currentPage * 10}`; // 10 results per page, change for more
+
+        const response = await fetch(pageUrl, {
             headers: {
-                'Accept': 'application/vnd.api+json', // Specify the response format
-                'Content-Type': 'application/vnd.api+json' // Specify the content type
+                'Accept': 'application/vnd.api+json', 
+                'Content-Type': 'application/vnd.api+json' 
             }
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`); // If the response is not OK, throw an error
+            throw new Error(`HTTP error! Status: ${response.status}`); // checks if the API request failed, and if it did, it stops or throw error
         }
 
         const data = await response.json(); // Parse the JSON response
@@ -137,6 +134,7 @@ async function getAnime() {
         // If no anime data is found, display a message
         if (data.data.length === 0) {
             resultsDiv.innerHTML = "<p>No anime found.</p>";
+            loadMoreButton.style.display = "none"; // Hide the Load More button if no more results
             return;
         }
 
@@ -148,19 +146,24 @@ async function getAnime() {
 
             const showCard = document.createElement("div"); // Create a new div for each anime
 
-            // Display the anime's title, image, and description inside the div
+            // Display the anime's title, image, and description inside the div, put here as it depends on anime result 
             showCard.innerHTML = `
                 <img src="${imageUrl}" alt="${title}">
                 <h3>${title}</h3>
                 <p><strong>Description:</strong> ${synopsis}</p>
             `;
 
-            resultsDiv.appendChild(showCard); // Append the showCard to the results container
+            resultsDiv.appendChild(showCard); // show the anime info on the page
         });
 
+        // increase the page number to have anext request vs keep on repeating which is also why we started off with 1 firstt
+        currentPage++;
+
     } catch (error) {
-        // If an error occurs during fetching, log the error and display an error message
-        console.error("Failed to fetch anime:", error);
-        resultsDiv.innerHTML = `<p style="color: red;">Error fetching anime. Please try again.</p>`;
+        console.error("Failed anime:", error);
     }
 }
+
+document.getElementById("load-more").addEventListener("click", () => { //adding an event listener for the click, and create the function
+    getAnime(); // Call the getAnime function again to load the next set of results
+});
