@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 15vh 20vh 50vh 15vh; /* Defining the four rows */
+    grid-template-columns: 1fr; /* One column layout */
+    justify-items: center; /* Centers the content inside the container */
+    align-items: start; /* Align content to the top */
+    gap: 20px; /* Space between grid items */
+}
+
+.header {
+    text-align: center;
+}
+
+#results {
+    grid-row: 3; /* Place results in the third row */
+    width: 100%; /* Make results container take up full width */
+    display: grid; /* Use grid inside #results to display items in rows and columns */
+    grid-template-columns: repeat(5, 1fr); /* Set 5 columns per row */
+    gap: 20px; /* Space between each anime result */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+#results div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    height: 100%; /* Ensures the content fills the available space */
+}
+
+#results img {
+    width: 100%; /* Make image fill available width */
+    max-width: 100px; /* Limit image size */
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+#categorySelect, #animeSearch, #categorySearch {
+    grid-row: 2; /* Place form controls in the second row */
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+#categorySearch {
+    margin-bottom: 10px;
+}
