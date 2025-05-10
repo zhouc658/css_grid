@@ -15,7 +15,7 @@ body {
     height: 100vh;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: 20vh 60vh 20vh;
+    grid-template-rows: 18vh 60vh 20vh;
     grid-template-columns: 20vw 1fr 1fr 1fr 20vw; /* Defines 3 columns in the center */
     justify-items: center; /* This centers the content inside the container */
     align-items: center;
