@@ -23,6 +23,10 @@ h1 {
     text-align: center;
     font-size: 50px;
 }
+p{
+    text-align: center;
+    font-size: 20px;
+}
 
 #results {
     width: 100%; /* Make results container take up full width */
