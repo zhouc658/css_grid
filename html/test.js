@@ -57,7 +57,7 @@ async function getCategories() {
 function CategoryDropdown(categories) {
     const categorySelect = document.getElementById("categorySelect");
     // Reset the dropdown to its default option
-    categorySelect.innerHTML = `<option value="">-- Choose a category to search --</option>`;
+    categorySelect.innerHTML = `<option value="">Choose a category to search</option>`;
 
     for (let i = 0; i < categories.length; i++) {
         const category = categories[i]; // Get the current category in the loop
