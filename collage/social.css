@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url(../Font/stich.otf);
+}
 body{
     margin:0;
     background: linear-gradient(to bottom, rgb(255, 207, 215), rgb(201, 227, 255));
@@ -121,4 +125,43 @@ body{
 }
 .cupcake img{
     width:100%;
+}
+
+.text{
+    grid-row: 12/14;
+    grid-column: 4/10;
+    transform: rotate(45deg);
+    z-index: 10;
+}
+.text h3{
+    font-family: 'MyFont';
+    font-size: 80px;
+    color: rgb(205, 134, 93);
+    text-shadow: 1px 2px rgb(65, 42, 24);
+}
+
+.text2{
+    grid-row: 5/9;
+    grid-column: 14/16;
+    transform: rotate(20deg);
+    z-index: 10;
+}
+.text2 h3{
+    font-family: 'MyFont';
+    font-size: 90px;
+    color: rgb(117, 170, 84);
+    text-shadow: 3px 3px rgb(50, 65, 24);
+}
+
+.text3{
+    grid-row: 10/12;
+    grid-column: 7/12;
+    transform: rotate(-20deg);
+    z-index: 10;
+}
+.text3 h3{
+    font-family: 'MyFont';
+    font-size: 90px;
+    color: rgb(246, 147, 182);
+    text-shadow: 5px 3px rgb(93, 167, 223);
 }
