@@ -1,3 +1,4 @@
+/* load a custom font from the folders and I named it MyFont */
 @font-face {
     font-family: 'MyFont';
     src: url(../Font/stich.otf);
@@ -9,16 +10,15 @@ body{
 .container{
     height: 100vh;
     width: 100%;
-    overflow: hidden; /* prevent scrollbars */
-
+    overflow: hidden; /* prevent scrolling both ways */
     display: grid;
     grid-template-rows: repeat(16, 1fr);
     grid-template-columns: repeat(16, 1fr);
 }
 
 .bbq{
-    grid-row: 1/8;
-    grid-column: 1/8;
+    grid-row: 1/8; /* start at row 1 and end before row 8*/
+    grid-column: 1/8; /* start at column 1 and end before column 8*/
     z-index:1;
 }
 .bbq img{
@@ -28,9 +28,8 @@ body{
 .ramen{
     grid-row: 5/17;
     grid-column: 1/6;
-    align-self: end;
+    align-self: end; /*aligns the img at the bottom of the grid area*/
     z-index: 9;
-
 }
 .ramen img{
     width:100%;
@@ -49,13 +48,13 @@ body{
     grid-row: 4/11;
     grid-column: 4/10;
     z-index: 7;
-    transform: rotate(-15deg);
+    transform: rotate(-15deg);/*rotate the image*/
 }
 .plush2 img{
     width:100%;
 }
 .plush2 a:hover img {
-    transform: scale(0.9); 
+    transform: scale(0.9); /*make the image a bit bigger when mouse hover over it*/
 }
 
 .me2{
@@ -137,7 +136,7 @@ body{
     font-family: 'MyFont';
     font-size: 80px;
     color: rgb(205, 134, 93);
-    text-shadow: 1px 2px rgb(65, 42, 24);
+    text-shadow: 1px 2px rgb(65, 42, 24); /* adds shadow to the text to create contrast and more depth*/
 }
 
 .text2{
