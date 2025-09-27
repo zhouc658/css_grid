@@ -1,3 +1,28 @@
 body{
     margin:0;
 }
+/* style.css */
+
+/* Optional: make your button look nicer */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(60deg, hsl(322, 100%, 85%), #3586e2);      border-radius: 8px;  /* Make corners more rounded */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: sans-serif;
+  }
+  .item-8 .btn:hover {
+    background: linear-gradient(45deg, #ff77cd, #87adfe);
+    box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25);
+    transform: translateY(-3px);
+  }
+  
+  /* Place the container in the bottom-left corner */
+  .item-8 {
+    position: fixed;       /* stays there even when you scroll */
+    bottom: 20px;          /* distance from bottom */
+    left: 20px;            /* distance from left */
+  }
+  
