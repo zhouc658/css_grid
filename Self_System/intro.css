@@ -118,7 +118,11 @@ body {
     font-weight: bold;
     box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.15);
   }
-  .item-4 .btn:hover,
+  .item-4 .btn:hover{
+    background: linear-gradient(45deg, #ff77cd, #87adfe);
+    box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25);
+    transform: translateY(-3px);
+  }
   .item-5 .btn:hover {
     background: linear-gradient(45deg, #ff77cd, #87adfe);
     box-shadow: 3px 12px 25px rgba(94, 28, 68, 0.25);
