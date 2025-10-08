@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure body takes up full viewport height */
+    background-color: black;
+  }
+  
+  canvas {
+    position: relative;
+    z-index: 1;
+    width: 1500px;  /* Width of the canvas */
+    height: 800px; /* Height of the canvas */
+  }
+  
