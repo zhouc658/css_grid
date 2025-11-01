@@ -126,6 +126,23 @@ function draw() {
   // label the station
   text(s.name, s.x, trackP + 25); // s.name gets the station name from the array, s.x is the position, and trackP + 25 makes the text appear beneath the circle or track line
 }
+
+  // 🔆 glowing light around the train cart based on “interacting” data
+  // find nearest station to train position
+  let nearestStation = stations.reduce((prev, curr) => 
+    Math.abs(curr.x - trainP) < Math.abs(prev.x - trainP) ? curr : prev
+  );
+
+  // map interaction count (0–5) to glow brightness
+  let glowAlpha = map(nearestStation.interacting, 0, 5, 20, 200);
+  let glowSize = 50;
+
+  noStroke();
+  for (let r = 5; r > 0; r--) {
+    fill(255, 200, 100, glowAlpha / r); // warm soft yellow tone
+    ellipse(trainP, trackP - 40, glowSize + r * 15); // draw aura
+  }
+
   //train cart
   fill(100);
   rect(trainP, trackP - 40, 60, 30, 5);  
@@ -300,4 +317,3 @@ function keyPressed() {
       showHeatmap = !showHeatmap;
     }
   }
-  
