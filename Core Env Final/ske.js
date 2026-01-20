@@ -124,7 +124,6 @@ function draw() {
     videoFinishedStar = false;
   }
 
-
   // DOG logic
   if (dogCount >= requiredDetections && !videoPlayingDog && !videoFinishedDog && !videoPlayingStar) {
     videoPlayingDog = true;
@@ -133,7 +132,6 @@ function draw() {
   if (dogCount < requiredDetections && videoFinishedDog) {
     videoFinishedDog = false;
   }
-
 
   // CAT logic
   if (pairCount >= requiredDetections && !videoPlayingPair && !videoFinishedPair && !videoPlayingStar && !videoPlayingDog) {
@@ -145,17 +143,11 @@ function draw() {
   }
 }
 
-
-
-
 function classifyVideo() {
   if (capture) {
     classifier.classify(capture, getResults);
   }
 }
-
-
-
 
 function getResults(results, error) {
   if (error) {
@@ -164,23 +156,10 @@ function getResults(results, error) {
   }
   console.log(results);
 
-
-
-
-
-
-
-
   let currentLabel = "none";
-
-
-
 
   if (results && results[0]) {
     let topResult = results[0];
-
-
-
 
     if (topResult.confidence < 0.7) {
       currentLabel = "none";
@@ -189,21 +168,12 @@ function getResults(results, error) {
     }
   }
 
-
-
-
   label = currentLabel;
-
-
-
 
   detectionBuffer.push(currentLabel);
   if (detectionBuffer.length > bufferSize) {
     detectionBuffer.shift();
   }
-
-
-
 
   classifyVideo();
 }
